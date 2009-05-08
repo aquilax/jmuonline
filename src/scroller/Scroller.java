@@ -17,7 +17,7 @@ import org.newdawn.slick.tiled.TiledMap;
  *
  * @author aquilax
  */
-public class Scroller2 extends BasicGame{
+public class Scroller extends BasicGame{
 
   private TiledMap map = null;
   private Hero hero = null;
@@ -42,7 +42,7 @@ public class Scroller2 extends BasicGame{
   private int heroOffX = 0;
   private int heroOffY = 0;
 
-  public Scroller2(){
+  public Scroller(){
     super("Scroller2");
   }
 
@@ -104,7 +104,7 @@ public class Scroller2 extends BasicGame{
   }
 
   public static void main(String[] args) throws SlickException {
-    AppGameContainer app = new AppGameContainer(new Scroller2());
+    AppGameContainer app = new AppGameContainer(new Scroller());
     app.setTargetFrameRate(120);
     app.setDisplayMode(screenw, screenh, false);
     app.start();

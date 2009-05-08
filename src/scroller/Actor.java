@@ -38,6 +38,8 @@ public abstract class Actor extends Animation{
   public int face = 0;
   public int astate = 0;
   public int nameXOffset = -1;
+  public int nameWidth = 0;
+  public int nameHeight = 0;
 
   public String name = "";
 
