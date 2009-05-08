@@ -5,8 +5,8 @@
 
 package scroller;
 
+import java.awt.Graphics;
 import org.newdawn.slick.Animation;
-import org.newdawn.slick.Image;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.SpriteSheet;
 
@@ -14,7 +14,7 @@ import org.newdawn.slick.SpriteSheet;
  *
  * @author aquilax
  */
-public class Actor extends Animation{
+public abstract class Actor extends Animation{
   public int xpos = 0;
   public int ypos = 0;
   public int xtile = 0;
@@ -37,6 +37,9 @@ public class Actor extends Animation{
 
   public int face = 0;
   public int astate = 0;
+  public int nameXOffset = -1;
+
+  public String name = "";
 
   Actor(String string) throws SlickException{
     super(new SpriteSheet(string, 32, 60), 5);
@@ -44,4 +47,7 @@ public class Actor extends Animation{
     awidth = getWidth();
     aheight = getHeight();
   }
+
+  public abstract void drawActor(org.newdawn.slick.Graphics g);
+  
 }

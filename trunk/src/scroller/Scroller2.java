@@ -7,7 +7,6 @@ package scroller;
 
 import org.newdawn.slick.AppGameContainer;
 import org.newdawn.slick.BasicGame;
-import org.newdawn.slick.Color;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Input;
@@ -57,6 +56,7 @@ public class Scroller2 extends BasicGame{
     fillBlocked(map);
     hero = new Hero("data/ari_charanim.png");
     hero.speed = 1;
+    hero.name = "Hero";
     hero.xtile = Integer.parseInt(map.getMapProperty("herox", "16"));
     hero.ytile = Integer.parseInt(map.getMapProperty("heroy", "8"));
 
@@ -93,16 +93,14 @@ public class Scroller2 extends BasicGame{
   public void render(GameContainer container, Graphics g) throws SlickException {
     int shx = (int)(offx/tileW)*tileW - offx;
     int shy = (int)(offy/tileH)*tileH - offy;
-    map.render(shx, shy, (int)(offx/tileW-halfvisx), (int)(offy/tileH-halfvisy), visx+1, visy+1);
-    hero.setCurrentFrame(hero.face+hero.astate);
-    hero.draw(hero.xpos, hero.ypos);
-    g.setColor(Color.red);
-    g.drawString("offx "+offx, 300, 10);
-    g.drawString("offy "+offy, 300, 30);
-    g.drawString("shx "+shx, 300, 50);
-    g.drawString("shy "+shy, 300, 70);
-    g.drawString("shx "+hero.xmap, 300, 90);
-    g.drawString("shy "+hero.ymap, 300, 110);
+    map.render(shx, shy, (int)(offx/tileW-halfvisx), (int)(offy/tileH-halfvisy), visx+1, visy+1);  
+    hero.drawActor(g);
+//    g.drawString("offx "+offx, 300, 10);
+//    g.drawString("offy "+offy, 300, 30);
+//    g.drawString("shx "+shx, 300, 50);
+//    g.drawString("shy "+shy, 300, 70);
+//    g.drawString("shx "+hero.xmap, 300, 90);
+//    g.drawString("shy "+hero.ymap, 300, 110);
   }
 
   public static void main(String[] args) throws SlickException {
