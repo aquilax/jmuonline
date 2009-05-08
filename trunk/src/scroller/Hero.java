@@ -5,6 +5,7 @@
 
 package scroller;
 
+import java.awt.Graphics2D;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.Font;
 import org.newdawn.slick.SlickException;
@@ -23,15 +24,18 @@ class Hero extends Actor{
   public void drawActor(org.newdawn.slick.Graphics g) {
     setCurrentFrame(face+astate);
     draw(xpos, ypos);
-    g.setColor(Color.red);
-    
+ 
     //TODO: This should be optimized
     if (nameXOffset == -1){
       Font font = g.getFont();
-      nameXOffset = (awidth/2) - font.getWidth(name)/2;
+      nameWidth = font.getWidth(name);
+      nameHeight = font.getHeight(name);
+      nameXOffset = (awidth/2) - nameWidth/2;
     }
-
-    g.drawString(name, xpos + nameXOffset, ypos-16);
+    g.setColor(Color.black);
+    g.fillRoundRect(xpos + nameXOffset-1, ypos-16, nameWidth+2, nameHeight, 2);
+    g.setColor(Color.red);
+    g.drawString(name, xpos + nameXOffset, ypos-18);
   }
 
 }
