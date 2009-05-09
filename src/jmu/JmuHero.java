@@ -3,9 +3,8 @@
  * and open the template in the editor.
  */
 
-package scroller;
+package jmu;
 
-import java.awt.Graphics2D;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.Font;
 import org.newdawn.slick.SlickException;
@@ -14,10 +13,12 @@ import org.newdawn.slick.SlickException;
  *
  * @author aquilax
  */
-class Hero extends Actor{
+class JmuHero extends JmuActor{
 
-  Hero(String string) throws SlickException{
+  JmuHero(String string) throws SlickException{
     super(string);
+    //Init Name
+    name = "Hero";
   }
 
   @Override

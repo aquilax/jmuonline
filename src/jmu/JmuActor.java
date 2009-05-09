@@ -3,7 +3,7 @@
  * and open the template in the editor.
  */
 
-package scroller;
+package jmu;
 
 import java.awt.Graphics;
 import org.newdawn.slick.Animation;
@@ -14,7 +14,7 @@ import org.newdawn.slick.SpriteSheet;
  *
  * @author aquilax
  */
-public abstract class Actor extends Animation{
+public abstract class JmuActor extends Animation{
   public int xpos = 0;
   public int ypos = 0;
   public int xtile = 0;
@@ -41,9 +41,12 @@ public abstract class Actor extends Animation{
   public int nameWidth = 0;
   public int nameHeight = 0;
 
+  public int OffX = 0;
+  public int OffY = 0;
+
   public String name = "";
 
-  Actor(String string) throws SlickException{
+  JmuActor(String string) throws SlickException{
     super(new SpriteSheet(string, 32, 60), 5);
     setAutoUpdate(false);
     awidth = getWidth();
